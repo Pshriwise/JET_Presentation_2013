@@ -1,0 +1,40 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetheme[white]{Wisconsin}
+\setbeamercovered{transparent}
+}
+
+\begin{document}
+
+%FRAME 1
+\frame{\frametitle{make\_watertight update to moab 4.6.0}
+
+\begin{itemize}
+\item problems merging curve senses after a surface deletion
+	\begin{itemize}
+    \item moab 4.6.0 version of set\_senses runs a check to make sure the curve still exists in the model before trying to set the data 
+    \item when combining curve sense data upon a curve merge the deleted surface still appears in the curve data, causing an error in set_senses
+    \item solution: created a filter that removes surfaces not in the model from the list of senses to be set
+    \item this is done using the moab function dimension which will return -1 if the entity is not in the model 
+	\end{itemize}
+\end{itemize}
+
+\vfill
+\textbf{4.0.1:} \\
+tag\_create( GLOBAL\_ID\_TAG\_NAME, sizeof(int), MB\_TAG\_DENSE,
+MB\_TYPE\_INTEGER, id\_tag, 0, true ); \\
+\textbf{4.6.0:} \\
+tag\_get\_handle( GLOBAL\_ID\_TAG\_NAME, 1, MB\_TYPE\_INTEGER, id\_tag, moab::MB\_TAG\_DENSE \textbar moab::MB\_TAG\_CREAT); \\
+    
+\vfill	       		
+
+ls
+}
+
+\end{document}
+
+
