@@ -10,10 +10,10 @@
 
 \begin{document}
 
-\title{DAG\_MCNP \& make\_watertight}
+\title{DAG-MCNP \& make\_watertight}
 \author{Patrick C Shriwise}
 \institute{University of Wisconsin - Madison}
-\date{ December 06, 2013}
+\date{December 06, 2013}
 
 %--- Title Frame ------------%
 \maketitle
@@ -40,8 +40,8 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \begin{itemize}
 
 \item Motivation
-\item Current impact of DAG\_MCNP
-\item DAG\_MCNP workflow
+\item Current impact of DAG-MCNP
+\item DAG-MCNP workflow
 \item make\_watertight algorithm
 \item Examples
 \item Limitations
@@ -77,46 +77,60 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 
 %--- Frame 5 ----------------%
 \begin{frame}
-\frametitle{Impact of DAGMC}
+\frametitle{Impact of DAG-MCNP}
 \vfill
 \includegraphics[scale=0.35]{QualityGraph.png}
 \end{frame}
 
 %--- Frame 6 ----------------%
 \begin{frame}
-\frametitle{Impact of DAGMC}
+\frametitle{Impact of DAG-MCNP}
 \includegraphics[scale=0.43, trim = 0 0 28 0]{InitialGraphImpact.png}
 \end{frame}
 
 
 %--- Frame 7 ----------------%
 \begin{frame}
-\frametitle{DAGMC Workflow}
-\includegraphics[scale=0.28, trim = 20 0 0 0 ]{DAGMC_Wrkflw1.png}
+\frametitle{DAG-MCNP Workflow}
+\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw1.png}
 \end{frame}
 
 
 %--- Frame 8 ----------------%
 \begin{frame}
-\frametitle{DAGMC Workflow}
-\includegraphics[scale=0.28, trim = 20 0 0 0 ]{DAGMC_Wrkflw2.png}
+\frametitle{DAG-MCNP Workflow}
+\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw2.png}
 \end{frame}
 
 %--- Frame 9 ----------------%
 \begin{frame}
-\frametitle{DAGMC Workflow}
-\includegraphics[scale=0.28, trim = 20 0 0 0 ]{DAGMC_Wrkflw3.png}
+\frametitle{DAG-MCNP Workflow}
+\includegraphics[scale=0.25, trim = 40 400 0 0 ]{DAGMC_Wrkflw3.png}
 \end{frame}
 
 %--- Frame 10 ----------------%
 \begin{frame}
 \frametitle{DAGMC Workflow}
-\includegraphics[scale=0.28, trim = 20 0 0 0 ]{DAGMC_Wrkflw4.png}
+\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw4.png}
 \end{frame}
+
 
 %--- Frame 11 ----------------%
 \begin{frame}
-\frametitle{DAGMC Challenges}
+\frametitle{DAG-MCNP Workflow}
+\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw5.png}
+\end{frame}
+
+%--- Frame 12 ----------------%
+\begin{frame}
+\frametitle{DAG-MCNP Workflow}
+\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw6.png}
+\end{frame}
+
+
+%--- Frame 13 ----------------%
+\begin{frame}
+\frametitle{DAG-MCNP Challenges}
 \begin{itemize}
 \vfill
 \item Quality of CAD geometry
@@ -129,10 +143,10 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \vfill
 \item Human efficiency gains reduced
 	\begin{itemize}
-	\item unique DAG\_MCNP skill set required
+	\item unique DAG-MCNP skill set required
 	\end{itemize}
 \vfill
-\item DAG\_MCNP-specific challenges
+\item DAG-MCNP-specific challenges
 	\begin{itemize}
 	\item Inconsistent faceting
 	\item Robustness of tracking algorithm
@@ -140,9 +154,9 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \end{itemize}
 \end{frame}
 
-%--- Frame 12 ----------------%
+%--- Frame 14 ----------------%
 \begin{frame}
-\frametitle{DAG\_MCNP Challenges}
+\frametitle{DAG-MCNP Challenges}
 \begin{itemize}
 \vfill
 
@@ -157,10 +171,10 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \vfill
 \item Human efficiency gains reduce
 	\begin{itemize}
-	\item unique DAG\_MCNP skill set required
+	\item unique DAG-MCNP skill set required
 	\end{itemize}
 \vfill
-\item DAG\_MCNP-specific challenges
+\item DAG-MCNP-specific challenges
 	\begin{itemize}
 	\item Inconsistent faceting
 	\item Robustness of tracking algorithm
@@ -168,7 +182,7 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \end{itemize}
 \end{frame}
 
-%--- Frame 13 ---------------%
+%--- Frame 15 ---------------%
 \begin{frame}
 \frametitle{make\_watertight}
 \begin{itemize}
@@ -179,15 +193,16 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \end{itemize}
 \end{frame}
 
-%--- Frame 14 ---------------%
+%--- Frame 16 ---------------%
 \begin{frame}
 \begin{itemize}
 \frametitle{make\_watertight}
-\item Algorithm fell behind and has recently been revived
+\item Algorithm became incompatible with external software infatstructure and has recently been revived
 \item Improves the topological soundness and accuracy of geometric models
 \item Recent success in applying make\_watertight to complex geometries
 \end{itemize}
 \end{frame}
+
 
 
 \end{document}
