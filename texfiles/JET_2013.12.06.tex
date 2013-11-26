@@ -28,7 +28,7 @@
 \item Came to CNERG in July of 2013
 \vfill
 \textbf{Research goal:} \\
-Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
+Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 (watertightness, faceting, topology)
 \end{itemize}
 \end{frame}
@@ -200,6 +200,57 @@ Improve the robustness \& performance of geometry handling in DAG\_MCNP\\
 \item Algorithm became incompatible with external software infatstructure and has recently been revived
 \item Improves the topological soundness and accuracy of geometric models
 \item Recent success in applying make\_watertight to complex geometries
+\end{itemize}
+\end{frame}
+
+%--- Frame 17 ---------------%
+\begin{frame}
+\frametitle{make\_watertight}
+
+\begin{itemize}
+\vfill
+\item By definition faceted models are not watertight
+	\begin{itemize}
+	\item CGM faceting engine in dagmc\_preproc (same as Cubit's)
+	\item surface edge vertices are not the same
+	\end{itemize}
+\vfill
+\item sealing algorithm makes topological changes to the model for watertightness
+% picture of cylinder edge
+
+\end{itemize}
+\includegraphics[scale=0.45, trim = -100 0 0 250 ]{stitch00.png}
+\end{frame}
+
+
+%--- Frame 18 ---------------%
+\begin{frame}
+\frametitle{make\_watertight}
+\begin{itemize}
+\item applies faceted geometric information from CGM to remove topological ambiguity from the model
+\includegraphics[scale=0.4, trim = 0 0 100 150]{VolOverlap.png}
+\end{itemize}
+\end{frame}
+
+
+%--- Frame 19 ---------------%
+\begin{frame}
+\frametitle{make\_watertight}
+\begin{itemize}
+\item Seals small gaps in volumes using faceted geometry curves
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.25, trim = 0 200 0 0 ]{cyl_loop_close.png}
+\end{center}
+
+\end{frame}
+
+
+%--- Frame 19 ---------------%
+\begin{frame}
+\frametitle{Recen Success}
+\begin{itemize}
+\item make\_watertight has (again) been able to seal complex models for analysis
 \end{itemize}
 \end{frame}
 
