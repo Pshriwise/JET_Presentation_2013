@@ -24,7 +24,7 @@
 \frametitle{Brief History}
 \begin{itemize}
 \item Undergrad at Kansas State University
-\item Worked on Pegasus for 2 years at UW - Madison
+\item Worked on Pegasus (ST) for 2 years at UW - Madison
 \item Came to CNERG in July of 2013
 \vfill
 \textbf{Research goal:} \\
@@ -214,6 +214,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 	\item CGM faceting engine in dagmc\_preproc (same as Cubit's)
 	\item Surfaces do not share skin vertices
 	\item Doesn't mean the model won't work
+	\item Inherently has topological ambiguities
 	\end{itemize}
 \vfill
 \item Algorithm makes topological changes to the model for watertightness
@@ -291,6 +292,8 @@ SiC-TBR Model
 \frametitle{Recent Success}
 
 ITER Blanket Lite
+\pause
+ - zero lost particles
 \begin{center}
 \scalebox{-1}[1]{\includegraphics[scale=0.3]{blanketlitemodel.png}}
 \end{center}
@@ -355,12 +358,16 @@ NASA Module
 \frametitle{Future work}
 \begin{itemize}
 \item Integrate make\_watertight into the DAG-MCNP workflow
-\item Separate faceting from dagmc\_preproc
+\item Separate faceting from CGM
+	\begin{itemize}
+	\item creates freedom to facet geometry features case by case
+	\end{itemize}
 \item Improve DAG-MCNP faceting performance
 	\begin{itemize}
 	\item high valence vertices
 	\end{itemize}
 \end{itemize}
+\includegraphics[scale=0.25, trim = 0 200 0 0 ]{DAGMC_Wrkflw7.png}
 \end{frame}
 
 
@@ -384,7 +391,13 @@ NASA Module
 %--- Frame 30 ---------------%
 \begin{frame}
 \frametitle{Summary}
-
+\begin{itemize}
+\item DAG-MCNP has become more robust with the revival of make\_watertight
+\vfill
+\item There has been success in sealing complex models for analysis
+\vfill
+\item Further robustness in DAG-MCNP faceting is desired
+\end{itemize}
 \end{frame}
 
 
