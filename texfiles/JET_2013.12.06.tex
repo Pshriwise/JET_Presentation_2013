@@ -212,14 +212,15 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \item By definition faceted models are not watertight
 	\begin{itemize}
 	\item CGM faceting engine in dagmc\_preproc (same as Cubit's)
-	\item surface edge vertices are not the same
+	\item Surfaces do not share skin vertices
+	\item Doesn't mean the model won't work
 	\end{itemize}
 \vfill
-\item sealing algorithm makes topological changes to the model for watertightness
-% picture of cylinder edge
+\item Algorithm makes topological changes to the model for watertightness
 
 \end{itemize}
 \includegraphics[scale=0.45, trim = -100 0 0 250 ]{stitch00.png}
+
 \end{frame}
 
 
@@ -241,19 +242,161 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \end{itemize}
 \begin{center}
 \includegraphics[scale=0.25, trim = 0 200 0 0 ]{cyl_loop_close.png}
+
 \end{center}
 
 \end{frame}
 
 
-%--- Frame 19 ---------------%
+%--- Frame 20 ---------------%
 \begin{frame}
-\frametitle{Recen Success}
+\frametitle{make\_watertight}
+
+\begin{center}
+
+
+\includegraphics[scale=0.25, trim = 0 0 0 0 ]{cyl_loop_close.png}
+\vfill 
+before: 332 verticess \\ after: 190 vertices
+\end{center}
+\end{frame}
+
+
+
+%--- Frame 21 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+SiC-TBR Model
+\begin{center}
+\includegraphics[scale=0.35]{sic.png}
+\end{center}
+
+\end{frame}
+
+
+%--- Frame 22 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+SiC-TBR Model
+\begin{center}
+\scalebox{-1}[1]{\includegraphics[scale=0.3]{sic-bottom.png}}
+\end{center}
+
+\end{frame}
+
+%--- Frame 23 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+ITER Blanket Lite
+\begin{center}
+\scalebox{-1}[1]{\includegraphics[scale=0.3]{blanketlitemodel.png}}
+\end{center}
+
+\end{frame}
+
+%--- Frame 24 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+ITER Blanket Lite
+\begin{center}
+\scalebox{-1}[1]{\includegraphics[scale=0.3]{blanketlitemodel_detail.png}}
+\end{center}
+
+\end{frame}
+
+%--- Frame 25 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+NASA Module
+\begin{center}
+\includegraphics[scale=0.3]{nasa_module.png}
+\end{center}
+\pause 
+5 surfaces unsealed
+\end{frame}
+
+%--- Frame 26 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+NASA Module
+\begin{center}
+\includegraphics[scale=0.35]{bad_faceting.png}
+\end{center}
+\end{frame}
+
+%--- Frame 27 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+
+NASA Module
+\begin{center}
+\includegraphics[scale=0.35]{bad_facets.png}
+\end{center}
+\end{frame}
+
+%--- Frame 28 ---------------%
+\begin{frame}
+\frametitle{Limitations of make\_watertight}
 \begin{itemize}
-\item make\_watertight has (again) been able to seal complex models for analysis
+\item Won't fix large-scale faceting issues
+\item Can't fix bad geometry
+\item 
 \end{itemize}
 \end{frame}
 
+%--- Frame 29 ---------------%
+\begin{frame}
+\frametitle{Future work}
+\begin{itemize}
+\item Integrate make\_watertight into the DAG-MCNP workflow
+\item Separate faceting from dagmc\_preproc
+\item Improve DAG-MCNP faceting performance
+	\begin{itemize}
+	\item high valence vertices
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+%--- Frame 30 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{itemize}
+\item Defeats the nature of the OBB tree
+\item Typically stems from some kind of geometry flaw
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.26]{high_valence_vert.png}
+\end{center}
+\begin{itemize}
+\item how to avoid these?
+\end{itemize}
+\end{frame}
+
+
+%--- Frame 30 ---------------%
+\begin{frame}
+\frametitle{Summary}
+
+\end{frame}
+
+
+%--- Frame 31 ---------------%
+\begin{frame}
+\frametitle{Thank you!}
+
+\begin{center}
+Questions?
+\end{center}
+
+\end{frame}
 
 
 \end{document}
