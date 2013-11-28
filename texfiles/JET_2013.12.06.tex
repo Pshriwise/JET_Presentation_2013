@@ -79,7 +79,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \begin{frame}
 \frametitle{Impact of DAG-MCNP}
 \vfill
-\includegraphics[scale=0.35]{QualityGraph.png}
+\includegraphics[scale=0.43, trim = 0 0 28 0]{QualityGraph.png}
 \end{frame}
 
 %--- Frame 6 ----------------%
@@ -137,8 +137,6 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 	\begin{itemize}
 	\item small gaps \& overlaps
 	\item lost particles
-	\item previous applications of CAD analysis \\
-	are less sensitive
 	\end{itemize}
 \vfill
 \item Human efficiency gains reduced
@@ -149,7 +147,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \item DAG-MCNP-specific challenges
 	\begin{itemize}
 	\item Inconsistent faceting
-	\item Robustness of tracking algorithm
+	\item Robustness of tracking algorithm relies heavily on CAD
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -165,22 +163,22 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 	\color{red}
 	\item small gaps \& overlaps
 	\item lost particles
-	\item previous applications of CAD analysis \\
-	are less sensitive
 	\end{itemize}
 \vfill
-\item Human efficiency gains reduce
+\item Human efficiency gains reduced
 	\begin{itemize}
-	\item unique DAG-MCNP skill set required
+	\item unique DAG-MCNP skill set required	
 	\end{itemize}
 \vfill
 \item DAG-MCNP-specific challenges
 	\begin{itemize}
 	\item Inconsistent faceting
-	\item Robustness of tracking algorithm
+	\item Robustness of tracking algorithm relies heavily on CAD
 	\end{itemize}
 \end{itemize}
 \end{frame}
+
+
 
 %--- Frame 15 ---------------%
 \begin{frame}
@@ -188,22 +186,41 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \begin{itemize}
 \item Developed by Brandon Smith (2011)
 \item purpose is to seal faceted CAD models using geometric information provided by CGM
-\vfill
-\includegraphics[scale=0.4, trim = 80 0 0 0]{sealing_ex.png}
-\end{itemize}
-\end{frame}
-
-%--- Frame 16 ---------------%
-\begin{frame}
-\begin{itemize}
-\frametitle{make\_watertight}
-\item Algorithm became incompatible with external software infatstructure and has recently been revived
+\item Algorithm became incompatible with external software infratstructure and has recently been refactored
 \item Improves the topological soundness and accuracy of geometric models
 \item Recent success in applying make\_watertight to complex geometries
 \end{itemize}
 \end{frame}
 
+%--- Frame 16 ---------------%
+\begin{frame}
+\frametitle{make\_watertight}
+\begin{itemize}
+\item Seals small gaps in volumes using faceted geometry curves
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.25, trim = 0 200 0 0 ]{cyl_loop_close.png}
+
+\end{center}
+
+\end{frame}
+
+
 %--- Frame 17 ---------------%
+\begin{frame}
+\frametitle{make\_watertight}
+
+\begin{center}
+
+
+\includegraphics[scale=0.25, trim = 0 0 0 0 ]{cyl_loop_close.png}
+\vfill 
+before: 332 verticess \\ after: 190 vertices
+\end{center}
+\end{frame}
+
+
+%--- Frame 18 ---------------%
 \begin{frame}
 \frametitle{make\_watertight}
 
@@ -220,87 +237,58 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \item Algorithm makes topological changes to the model for watertightness
 
 \end{itemize}
-\includegraphics[scale=0.45, trim = -100 0 0 250 ]{stitch00.png}
+\includegraphics[scale=0.45, trim = -100 0 0 300 ]{stitch00.png}
 
 \end{frame}
-
-
-%--- Frame 18 ---------------%
-\begin{frame}
-\frametitle{make\_watertight}
-\begin{itemize}
-\item applies faceted geometric information from CGM to remove topological ambiguity from the model
-\includegraphics[scale=0.4, trim = 0 0 100 150]{VolOverlap.png}
-\end{itemize}
-\end{frame}
-
 
 %--- Frame 19 ---------------%
 \begin{frame}
 \frametitle{make\_watertight}
 \begin{itemize}
-\item Seals small gaps in volumes using faceted geometry curves
+\item applies faceted geometric information from CGM to remove topological ambiguity from the model
 \end{itemize}
-\begin{center}
-\includegraphics[scale=0.25, trim = 0 200 0 0 ]{cyl_loop_close.png}
-
-\end{center}
-
+\includegraphics[scale=0.4, trim = 20 50 0 0]{sealing_ex.png}
 \end{frame}
+
+
 
 
 %--- Frame 20 ---------------%
 \begin{frame}
-\frametitle{make\_watertight}
+\frametitle{Recent Success}
 
+Aries Model
 \begin{center}
-
-
-\includegraphics[scale=0.25, trim = 0 0 0 0 ]{cyl_loop_close.png}
-\vfill 
-before: 332 verticess \\ after: 190 vertices
+\includegraphics[scale=0.3]{sic.png}
 \end{center}
+was losing 1 in 10k particles before sealing
 \end{frame}
-
 
 
 %--- Frame 21 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
-SiC-TBR Model
-\begin{center}
-\includegraphics[scale=0.35]{sic.png}
-\end{center}
-
-\end{frame}
-
-
-%--- Frame 22 ---------------%
-\begin{frame}
-\frametitle{Recent Success}
-
-SiC-TBR Model
+Aries Model - zero lost particles in 10\textsuperscript{9}
 \begin{center}
 \scalebox{-1}[1]{\includegraphics[scale=0.3]{sic-bottom.png}}
 \end{center}
 
 \end{frame}
 
-%--- Frame 23 ---------------%
+%--- Frame 22 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
 ITER Blanket Lite
-\pause
- - zero lost particles
+ - zero lost particles in 10\textsuperscript{8}
 \begin{center}
 \scalebox{-1}[1]{\includegraphics[scale=0.3]{blanketlitemodel.png}}
 \end{center}
 
 \end{frame}
 
-%--- Frame 24 ---------------%
+%--- Frame 23 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
@@ -311,7 +299,7 @@ ITER Blanket Lite
 
 \end{frame}
 
-%--- Frame 25 ---------------%
+%--- Frame 24 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
@@ -319,11 +307,10 @@ NASA Module
 \begin{center}
 \includegraphics[scale=0.3]{nasa_module.png}
 \end{center}
-\pause 
 5 surfaces unsealed
 \end{frame}
 
-%--- Frame 26 ---------------%
+%--- Frame 25 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
@@ -333,7 +320,7 @@ NASA Module
 \end{center}
 \end{frame}
 
-%--- Frame 27 ---------------%
+%--- Frame 26 ---------------%
 \begin{frame}
 \frametitle{Recent Success}
 
@@ -343,17 +330,23 @@ NASA Module
 \end{center}
 \end{frame}
 
-%--- Frame 28 ---------------%
+%--- Frame 27 ---------------%
 \begin{frame}
 \frametitle{Limitations of make\_watertight}
 \begin{itemize}
 \item Won't fix large-scale faceting issues
 \item Can't fix bad geometry
-\item 
 \end{itemize}
+\begin{center}
+\textbf{tolerant tracking}
+\vfill
+\includegraphics[scale=0.2, trim = 0 0 100 100]{VolOverlap.png}
+max tolerance: 10\textsuperscript{-3} cm
+\end{center}
+
 \end{frame}
 
-%--- Frame 29 ---------------%
+%--- Frame 28 ---------------%
 \begin{frame}
 \frametitle{Future work}
 \begin{itemize}
@@ -372,7 +365,7 @@ NASA Module
 
 
 
-%--- Frame 30 ---------------%
+%--- Frame 29 ---------------%
 \begin{frame}
 \frametitle{High valence vertices}
 \begin{itemize}
@@ -388,16 +381,46 @@ NASA Module
 \end{frame}
 
 
+%--- Frame 29 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_1.png}
+\end{center}
+\end{frame}
+
+
+%--- Frame 29 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_2.png}
+\end{center}
+\end{frame}
+
+%--- Frame 29 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_4.png}
+\end{center}
+\end{frame}
+
+
 %--- Frame 30 ---------------%
 \begin{frame}
 \frametitle{Summary}
 \begin{itemize}
 \item DAG-MCNP has become more robust with the revival of make\_watertight
-\vfill
+
 \item There has been success in sealing complex models for analysis
-\vfill
+
 \item Further robustness in DAG-MCNP faceting is desired
 \end{itemize}
+\begin{center}
+\includegraphics[scale=0.2]{InitialGraphImpact_postmw.png}
+\end{center}
+
 \end{frame}
 
 

@@ -15,8 +15,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="DAGMC_Wrkflw.svg"
-   inkscape:export-filename="/local.hd/cnergg/shriwise/JET_Presentation_2013/texfiles/DAGMC_Wrkflw6.png"
+   sodipodi:docname="DAGMC_Wrkflw2.svg"
+   inkscape:export-filename="/local.hd/cnergg/shriwise/JET_Presentation_2013/texfiles/DAGMC_Wrkflw3.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
