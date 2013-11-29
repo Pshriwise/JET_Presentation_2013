@@ -92,39 +92,118 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 %--- Frame 7 ----------------%
 \begin{frame}
 \frametitle{DAG-MCNP Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw1.png}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0]{DAGMC_Wrkflw1.png}
+\end{center}
 \end{frame}
 
 
 %--- Frame 8 ----------------%
 \begin{frame}
 \frametitle{DAG-MCNP Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw2.png}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0]{DAGMC_Wrkflw2.png}
+\end{center}
 \end{frame}
 
 %--- Frame 9 ----------------%
 \begin{frame}
-\frametitle{DAG-MCNP Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0 ]{DAGMC_Wrkflw3.png}
+\frametitle{Imprint and Merge}
+\begin{itemize}
+\item Imprint:
+	\begin{itemize}
+	\item merges coincident surfaces topologically
+    \item creates a new surface for both volumes where they touch
+    \item allows volumes to touch on the same surface
+    \item some tolerance is allowed in this process
+	\end{itemize}
+\item Merge:
+	\begin{itemize}
+	\item merges entities that are topologically
+	\textbf{and} geometrically coincident
+	\item main purpose is to remove redunant definitions of curves, vertices, etc.
+	\end{itemize}
+\end{itemize}
+
 \end{frame}
+
+
 
 %--- Frame 10 ----------------%
 \begin{frame}
-\frametitle{DAGMC Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw4.png}
+\frametitle{DAG-MCNP Workflow}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0 ]{DAGMC_Wrkflw3.png}
+\end{center}
 \end{frame}
+
 
 
 %--- Frame 11 ----------------%
 \begin{frame}
+\frametitle{CGM \& MOAB}
+\begin{itemize}
+\item Common Geometry Module (CGM)
+	\begin{itemize}
+	\item facet-based geometry manipulation tool
+	\item underlying CUBIT geomtery engine
+	\item directly modifies the native CAD gometry format model
+	\item avoids translation errors
+	\end{itemize}
+	\vfill
+\item Mesh-Oriented datABase (MOAB)
+	\begin{itemize}
+	\item mesh manipulation and evaulation tool
+	\item allows storage of metadata (material defs)
+	\item PyTAPS allows for mesh manipulation through simple Python scripts
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%--- Frame 12 ----------------%
+\begin{frame}
+\frametitle{DAGMC Workflow}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0]{DAGMC_Wrkflw4.png}
+\end{center}
+\end{frame}
+
+%--- Frame 13 ----------------%
+\begin{frame}
+\frametitle{OBB Tree}
+\textbf{Oriented Bounding Box Tree}
+\begin{itemize}
+\item allows for faster transversal of CAD model through a spatial tree
+\end{itemize}
+
+
+\begin{center}
+\includegraphics[scale=0.2]{OBB_Tree.png} 
+\end{center}
+\hrule
+\begin{center}
+\includegraphics[scale=0.18]{OBB_A.png}
+\includegraphics[scale=0.18]{OBB_BC.png}
+\includegraphics[scale=0.18]{OBB_DEFG.png} \\
+\end{center}
+
+\end{frame}
+
+%--- Frame 11 ----------------%
+\begin{frame}
 \frametitle{DAG-MCNP Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw5.png}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0]{DAGMC_Wrkflw5.png}
+\end{center}
 \end{frame}
 
 %--- Frame 12 ----------------%
 \begin{frame}
 \frametitle{DAG-MCNP Workflow}
-\includegraphics[scale=0.25, trim = 40 400 0 0]{DAGMC_Wrkflw6.png}
+\begin{center}
+\includegraphics[scale=0.23, trim = 40 200 0 0]{DAGMC_Wrkflw6.png}
+\end{center}
 \end{frame}
 
 
@@ -139,7 +218,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 	\item lost particles
 	\end{itemize}
 \vfill
-\item Human efficiency gains reduced
+\item Human efficiency gains limited
 	\begin{itemize}
 	\item unique DAG-MCNP skill set required
 	\end{itemize}
@@ -165,7 +244,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 	\item lost particles
 	\end{itemize}
 \vfill
-\item Human efficiency gains reduced
+\item Human efficiency gains limited
 	\begin{itemize}
 	\item unique DAG-MCNP skill set required	
 	\end{itemize}
@@ -257,7 +336,7 @@ before: 332 verticess \\ after: 190 vertices
 \begin{frame}
 \frametitle{Recent Success}
 
-Aries Model
+ARIES Model
 \begin{center}
 \includegraphics[scale=0.3]{sic.png}
 \end{center}
@@ -269,12 +348,50 @@ was losing 1 in 10k particles before sealing
 \begin{frame}
 \frametitle{Recent Success}
 
-Aries Model - zero lost particles in 10\textsuperscript{9}
+ARIES Model - zero lost particles in 10\textsuperscript{9}
 \begin{center}
 \scalebox{-1}[1]{\includegraphics[scale=0.3]{sic-bottom.png}}
 \end{center}
 
 \end{frame}
+
+%--- Frame 22 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+ARIES Model
+\begin{center}
+\includegraphics[scale=0.25]{Coolant_Channels.png}
+\end{center}
+\end{frame}
+
+
+%--- Frame 22 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+ARIES Model
+\begin{center}
+\includegraphics[scale=0.25]{Channel_Corner_Zoomed.png}
+\end{center}
+\end{frame}
+
+%--- Frame 22 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+ARIES Model
+\begin{center}
+\includegraphics[scale=0.25]{Channel_corner_broken_2.png}
+\end{center}
+\end{frame}
+
+%--- Frame 22 ---------------%
+\begin{frame}
+\frametitle{Recent Success}
+ARIES Model
+\begin{center}
+\includegraphics[scale=0.25]{Channel_corner_broken_3.png}
+\end{center}
+\end{frame}
+
 
 %--- Frame 22 ---------------%
 \begin{frame}
@@ -381,33 +498,40 @@ max tolerance: 10\textsuperscript{-3} cm
 \end{frame}
 
 
-%--- Frame 29 ---------------%
-\begin{frame}
-\frametitle{High valence vertices}
-\begin{center}
-\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_1.png}
-\end{center}
-\end{frame}
-
-
-%--- Frame 29 ---------------%
-\begin{frame}
-\frametitle{High valence vertices}
-\begin{center}
-\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_2.png}
-\end{center}
-\end{frame}
-
-%--- Frame 29 ---------------%
-\begin{frame}
-\frametitle{High valence vertices}
-\begin{center}
-\includegraphics[scale=0.6, trim = 0 0 0 250]{HV_4.png}
-\end{center}
-\end{frame}
-
-
 %--- Frame 30 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 300]{HV_1.png}
+\end{center}
+\end{frame}
+
+
+%--- Frame 31 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 300]{HV_2.png}
+\end{center}
+\end{frame}
+
+%--- Frame 32 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 300]{HV_4.png}
+\end{center}
+\end{frame}
+
+%--- Frame 33 ---------------%
+\begin{frame}
+\frametitle{High valence vertices}
+\begin{center}
+\includegraphics[scale=0.6, trim = 0 0 0 300]{HV_4_boxes2.png}
+\end{center}
+\end{frame}
+
+%--- Frame 34 ---------------%
 \begin{frame}
 \frametitle{Summary}
 \begin{itemize}
@@ -424,14 +548,16 @@ max tolerance: 10\textsuperscript{-3} cm
 \end{frame}
 
 
-%--- Frame 31 ---------------%
+%--- Frame 35 ---------------%
 \begin{frame}
 \frametitle{Thank you!}
 
 \begin{center}
 Questions?
 \end{center}
-
+Special thank you to:\\
+Paul Wilson \\
+Andrew Davis
 \end{frame}
 
 
