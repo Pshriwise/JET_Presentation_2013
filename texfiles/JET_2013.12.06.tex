@@ -11,7 +11,7 @@
 \begin{document}
 
 \title{DAG-MCNP \& make\_watertight}
-\author{Patrick C Shriwise}
+\author{Patrick C. Shriwise}
 \institute{University of Wisconsin - Madison}
 \date{December 06, 2013}
 
@@ -23,7 +23,7 @@
 \begin{frame}
 \frametitle{Brief History}
 \begin{itemize}
-\item Undergrad at Kansas State University
+\item Undergrad at Kansas State University - ME w/ minor in NE
 \item Worked on Pegasus (ST) for 2 years at UW - Madison
 \item Came to CNERG in July of 2013
 \vfill
@@ -146,8 +146,8 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \item Common Geometry Module (CGM)
 	\begin{itemize}
 	\item facet-based geometry manipulation tool
-	\item underlying CUBIT geomtery engine
-	\item directly modifies the native CAD gometry format model
+	\item underlying CUBIT geometry engine
+	\item directly modifies the native CAD geometry format model
 	\item avoids translation errors
 	\end{itemize}
 	\vfill
@@ -225,8 +225,8 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \vfill
 \item DAG-MCNP-specific challenges
 	\begin{itemize}
-	\item Inconsistent faceting
-	\item Robustness of tracking algorithm relies heavily on CAD
+	\item inconsistent faceting
+	\item robustness of tracking algorithm relies heavily on CAD
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -264,8 +264,8 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 \frametitle{make\_watertight}
 \begin{itemize}
 \item Developed by Brandon Smith (2011)
-\item purpose is to seal faceted CAD models using geometric information provided by CGM
-\item Algorithm became incompatible with external software infratstructure and has recently been refactored
+\item Purpose is to seal faceted CAD models using geometric information provided by CGM
+\item Algorithm became incompatible with external software infrastructure and has recently been refactored
 \item Improves the topological soundness and accuracy of geometric models
 \item Recent success in applying make\_watertight to complex geometries
 \end{itemize}
@@ -294,7 +294,7 @@ Improve the robustness \& performance of geometry handling in DAG-MCNP\\
 
 \includegraphics[scale=0.25, trim = 0 0 0 0 ]{cyl_loop_close.png}
 \vfill 
-before: 332 verticess \\ after: 190 vertices
+before: 332 vertices \\ after: 190 vertices
 \end{center}
 \end{frame}
 
@@ -308,9 +308,9 @@ before: 332 verticess \\ after: 190 vertices
 \item By definition faceted models are not watertight
 	\begin{itemize}
 	\item CGM faceting engine in dagmc\_preproc (same as Cubit's)
-	\item Surfaces do not share skin vertices
-	\item Doesn't mean the model won't work
-	\item Inherently has topological ambiguities
+	\item surfaces do not share skin vertices
+	\item doesn't mean the model won't work
+	\item inherently has topological ambiguities
 	\end{itemize}
 \vfill
 \item Algorithm makes topological changes to the model for watertightness
@@ -324,7 +324,7 @@ before: 332 verticess \\ after: 190 vertices
 \begin{frame}
 \frametitle{make\_watertight}
 \begin{itemize}
-\item applies faceted geometric information from CGM to remove topological ambiguity from the model
+\item Applies faceted geometric information from CGM to remove topological ambiguity from the model
 \end{itemize}
 \includegraphics[scale=0.4, trim = 20 50 0 0]{sealing_ex.png}
 \end{frame}
@@ -340,7 +340,7 @@ ARIES Model
 \begin{center}
 \includegraphics[scale=0.3]{sic.png}
 \end{center}
-was losing 1 in 10k particles before sealing
+Was losing 1 in 10,000 particles before sealing
 \end{frame}
 
 
@@ -555,7 +555,8 @@ max tolerance: 10\textsuperscript{-3} cm
 \begin{center}
 Questions?
 \end{center}
-Special thank you to:\\
+\vfill
+Special thanks to:\\
 Paul Wilson \\
 Andrew Davis
 \end{frame}
